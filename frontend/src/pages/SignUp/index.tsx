@@ -36,6 +36,7 @@ const SignUp: React.FC = () => {
         formRef.current?.setErrors({});
 
         const schema = Yup.object().shape({
+          name: Yup.string().required(),
           email: Yup.string()
             .email('Digite um email válido')
             .required('E-mail obrigatório'),
@@ -51,7 +52,7 @@ const SignUp: React.FC = () => {
         addToast({
           type: 'success',
           title: 'Cadastro realizado',
-          description: 'Você já fazer seu logon no GoBarber',
+          description: 'Você já pode fazer seu logon no GoBarber',
         });
 
         history.push('/');
