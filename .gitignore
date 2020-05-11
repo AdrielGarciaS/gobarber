@@ -106,3 +106,5 @@ dist
 # tmp
 backend/tmp/*
 !backend/tmp/.gitkeep
+backend/tmp/uploads/*
+!backend/tmp/uploads/.gitkeep

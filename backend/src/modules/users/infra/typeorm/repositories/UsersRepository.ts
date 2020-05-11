@@ -2,6 +2,7 @@ import { getRepository, Repository } from 'typeorm';
 
 import IUsersRepository from '@modules/users/repositories/IUsersRepository';
 import ICreateUserDTO from '@modules/users/dtos/ICreateUserDTO';
+import IFindAllProvidersDTO from '@modules/users/dtos/IFindAllProvidersDTO';
 
 import User from '../entities/User';
 
@@ -24,6 +25,25 @@ class UsersRepository implements IUsersRepository {
     });
 
     return user;
+  }
+
+  public async findAllProviders({
+    except_user_id,
+  }: IFindAllProvidersDTO): Promise<User[]> {
+    const users = await this.ormRepository.find();
+
+    users.forEach(user => {
+      delete user.password;
+      return user;
+    });
+
+    if (except_user_id) {
+      const providers = users.filter(user => user.id !== except_user_id);
+
+      return providers;
+    }
+
+    return users;
   }
 
   public async create(userData: ICreateUserDTO): Promise<User> {

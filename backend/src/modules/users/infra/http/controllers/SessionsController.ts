@@ -4,7 +4,7 @@ import { container } from 'tsyringe';
 
 import AuthenticateUserService from '@modules/users/services/AuthenticateUserService';
 
-export default class SessionsControler {
+class SessionsControler {
   public async create(request: Request, response: Response): Promise<Response> {
     const { email, password } = request.body;
 
@@ -20,3 +20,5 @@ export default class SessionsControler {
     return response.json({ user, token });
   }
 }
+
+export default SessionsControler;
