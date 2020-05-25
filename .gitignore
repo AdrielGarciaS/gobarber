@@ -104,7 +104,8 @@ dist
 .tern-port
 
 # tmp
-backend/tmp/*
-!backend/tmp/.gitkeep
-backend/tmp/uploads/*
 !backend/tmp/uploads/.gitkeep
+!backend/tmp/.gitkeep
+backend/.env
+#backend/ormconfig.json
+backend/tmp
