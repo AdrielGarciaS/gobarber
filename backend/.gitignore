@@ -1,0 +1,4 @@
+tmp/*.*
+tmp/uploads/*.*
+!tmp/uploads/.gitkeep
+coverage/
