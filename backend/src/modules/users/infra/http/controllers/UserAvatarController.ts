@@ -13,6 +13,6 @@ export default class UserAvatarController {
       avatarFilename: request.file.filename,
     });
 
-    return response.json({ user: classToClass(user) });
+    return response.json(classToClass(user));
   }
 }
