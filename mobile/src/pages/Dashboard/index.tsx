@@ -34,8 +34,6 @@ const Dashboard: React.FC = () => {
 
   const [providers, setProviders] = useState<Provider[]>([]);
 
-  console.log(providers);
-
   useEffect(() => {
     api.get<Provider[]>('providers').then(response => {
       const data = response.data.map(provider => ({
@@ -75,6 +73,7 @@ const Dashboard: React.FC = () => {
 
       <ProvidersList
         data={providers}
+        contentContainerStyle={{ paddingBottom: 32 }}
         keyExtractor={provider => provider.id}
         ListHeaderComponent={
           <ProvidersListTitle>Cabeleireiros</ProvidersListTitle>
