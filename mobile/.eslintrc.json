@@ -1,6 +1,7 @@
 {
   "env": {
-    "es6": true
+    "es6": true,
+    "browser": true
   },
   "extends": [
     "plugin:react/recommended",
@@ -32,6 +33,7 @@
     "react/jsx-one-expression-per-line": "off",
     "@typescript-eslint/camelcase": "off",
     "react-hooks/rules-of-hooks": "error",
+    "import/no-duplicates": "off",
     "react-hooks/exhaustive-deps": "warn",
     "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
     "import/prefer-default-export": "off",
