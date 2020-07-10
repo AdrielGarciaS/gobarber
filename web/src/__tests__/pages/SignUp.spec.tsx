@@ -107,6 +107,14 @@ describe('SignUp Page', () => {
           type: 'error',
         }),
       );
+
+      expect(mockedAddToast).not.toHaveBeenCalledWith(
+        expect.objectContaining({
+          type: 'success',
+        }),
+      );
+
+      expect(mockedHistoryPush).not.toHaveBeenCalledWith('/');
     });
   });
 });
